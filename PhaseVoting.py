@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Apr 11 21:11:44 2023
-
 @author: Brent Visser
 """
 import streamlit as st
@@ -11,7 +10,7 @@ import gspread
 from PIL import Image
 import requests
 from io import BytesIO
-
+from datetime import datetime
 
 def check_password():
     """Returns `True` if the user had the correct password."""
@@ -108,27 +107,27 @@ if check_password():
     
     # Show the buttons for the user to answer
     if col1.button('Coacervate', key="Coacervate"):
-        data.loc[len(data)] = [selected_number, 'coacervate']
+        data.loc[len(data)] = [selected_number, 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
     if col2.button('Solution', key="Solution"):
-        data.loc[len(data)] = [selected_number, 'solution']
+        data.loc[len(data)] = [selected_number, 'solution', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
     if col3.button('Aggregate', key="Aggregate"):
-        data.loc[len(data)] = [selected_number, 'Aggregate']
+        data.loc[len(data)] = [selected_number, 'Aggregate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
     if col4.button('Gel', key="Gel"):
-        data.loc[len(data)] = [selected_number, 'gel']
+        data.loc[len(data)] = [selected_number, 'gel', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
     if col4.button('Skip', key="Skip"):
-        data.loc[len(data)] = [selected_number, 'Skip']
+        data.loc[len(data)] = [selected_number, 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
@@ -141,4 +140,3 @@ if check_password():
             st.cache_resource.clear()
             st.experimental_rerun()
     st.write(f'{len(st.session_state.numbers)} images in session (no, you don\'t have to answer them all :) )')
-
