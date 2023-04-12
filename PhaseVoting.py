@@ -103,12 +103,7 @@ if check_password():
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
         return selected_number
-    
-    @st.cache_resource     
-    def single_run():
-        selected_number = new_image()
-        return selected_number
-    selected_number = single_run()
+    selected_number = new_image()
     
     
     # Create 5 columns for the buttons
@@ -119,28 +114,23 @@ if check_password():
     if col1.button('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [selected_number, 'coacervate']
         save_data(worksheet, data)
-        selected_number = new_image()
 
 
     if col2.button('Solution', key="Solution"):
         data.loc[len(data)] = [selected_number, 'solution']
         save_data(worksheet, data)
-        selected_number = new_image()
     
     if col3.button('Aggregate', key="Aggregate"):
         data.loc[len(data)] = [selected_number, 'Aggregate']
         save_data(worksheet, data)
-        selected_number = new_image()
         
     if col4.button('Gel', key="Gel"):
         data.loc[len(data)] = [selected_number, 'gel']
         save_data(worksheet, data)
-        selected_number = new_image()    
         
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [selected_number, 'Skip']
         save_data(worksheet, data)
-        selected_number = new_image()       
 
 
     
