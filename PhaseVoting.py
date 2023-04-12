@@ -92,14 +92,6 @@ if check_password():
     
     # Load the data from the CSV file
     data, worksheet = load_data()
-               
-    if len(image_list) == 0:
-        st.write('No more images, clear cache to load all images again')
-        if st.button("Clear cache", key = "Cache"):
-            st.cache_resource.clear()
-            st.experimental_rerun()
-    else:
-        random_image = random.choice(image_list)
     
     # Choose a number to remove
     with st.spinner('Saving & Loading next image...'):
@@ -144,12 +136,10 @@ if check_password():
 
     
     # Show the remaining number of images
-    if len(image_list) == 0:
+    if len(st.session_state.numbers) == 0:
         st.write('No more images, clear cache to load all images again')
         if st.button("Clear cache", key = "Cache"):
             st.cache_resource.clear()
             st.experimental_rerun()
-    else:
-        random_image = random.choice(image_list)
         st.write(f'{len(st.session_state.numbers)} images in session (no, you don\'t have to answer them all :) )')
 
