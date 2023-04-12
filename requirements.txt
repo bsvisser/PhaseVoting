@@ -1,6 +1,6 @@
 streamlit
 pandas
 gspread==5.7.1
-PIL
+pillow
 requests
 io
