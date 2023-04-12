@@ -123,30 +123,30 @@ if check_password():
     
     
     # Show the buttons for the user to answer
-    if col1.button('Coacervate', key="Coacervate"):
+    if col1.radio('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [random_image, 'coacervate']
         save_data(worksheet, data)
         image_list.remove(random_image)
         st.session_state.numbers.remove(selected_number)
         
 
-    if col2.button('Solution', key="Solution"):
+    if col2.radio('Solution', key="Solution"):
         data.loc[len(data)] = [random_image, 'solution']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
     
-    if col3.button('Aggregate', key="Aggregate"):
+    if col3.radio('Aggregate', key="Aggregate"):
         data.loc[len(data)] = [random_image, 'Aggregate']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
 
     
-    if col4.button('Gel', key="Gel"):
+    if col4.radio('Gel', key="Gel"):
         data.loc[len(data)] = [random_image, 'gel']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
-    if col4.button('Skip', key="Skip"):
+    if col4.radio('Skip', key="Skip"):
         data.loc[len(data)] = [random_image, 'Skip']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
@@ -161,9 +161,5 @@ if check_password():
             st.experimental_rerun()
     else:
         random_image = random.choice(image_list)
-    #st.write(f'{len(image_list)} images remaining')
+    st.write(f'{len(image_list)} images in session')
 
-# to do: upload images to server, test script
-# upload script to github and deploy with ecrets
-#check if writing still works..
-# add skip button
