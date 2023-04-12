@@ -93,12 +93,13 @@ if check_password():
     data, worksheet = load_data()
     
     # Choose a number to remove
-    with st.spinner('Saving & Loading next image...'):
-        selected_number = st.session_state.numbers[0]
-        IMAGE_URL = f'{base_url}{selected_number}'
-        response = requests.get(IMAGE_URL)
-        image = Image.open(BytesIO(response.content))
-        st.image(image, width = 512,caption=selected_number)
+    def new_image():
+        with st.spinner('Saving & Loading next image...'):
+            selected_number = st.session_state.numbers[0]
+            IMAGE_URL = f'{base_url}{selected_number}'
+            response = requests.get(IMAGE_URL)
+            image = Image.open(BytesIO(response.content))
+            st.image(image, width = 512,caption=selected_number)
     
     # Create two columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -127,7 +128,7 @@ if check_password():
         data.loc[len(data)] = [selected_number, 'Skip']
         save_data(worksheet, data)
 
-
+    new_image()
 
     
     # Show the remaining number of images
