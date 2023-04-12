@@ -107,7 +107,7 @@ if check_password():
         IMAGE_URL = f'{base_url}{selected_number}'
         response = requests.get(IMAGE_URL)
         image = Image.open(BytesIO(response.content))
-        st.image(image, width = 256)
+        st.image(image, width = 256,caption=selected_number)
     
     # Create two columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
