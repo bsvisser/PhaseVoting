@@ -85,7 +85,6 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         st.session_state.numbers.pop(0)
-        new_image()
 
         
     # Define the main Streamlit app
@@ -99,7 +98,7 @@ if check_password():
             response = requests.get(IMAGE_URL)
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=st.session_state.numbers[0])    
-
+    new_image()
     # Load the data from the CSV file
     data, worksheet = load_data()
         
