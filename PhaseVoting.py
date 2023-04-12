@@ -94,14 +94,12 @@ if check_password():
     data, worksheet = load_data()
     
     # Choose a number to remove
-    def new_image():
-        with st.spinner('Saving & Loading next image...'):
-            selected_number = st.session_state.numbers[0]
-            IMAGE_URL = f'{base_url}{selected_number}'
-            response = requests.get(IMAGE_URL)
-            image = Image.open(BytesIO(response.content))
-            st.image(image, width = 512,caption=selected_number)
-        return selected_number
+    with st.spinner('Saving & Loading next image...'):
+        selected_number = st.session_state.numbers[0]
+        IMAGE_URL = f'{base_url}{selected_number}'
+        response = requests.get(IMAGE_URL)
+        image = Image.open(BytesIO(response.content))
+        st.image(image, width = 512,caption=selected_number)
   
     
     # Create 5 columns for the buttons
@@ -112,27 +110,22 @@ if check_password():
     if col1.button('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [selected_number, 'coacervate']
         save_data(worksheet, data)
-        selected_number = new_image()
 
     if col2.button('Solution', key="Solution"):
         data.loc[len(data)] = [selected_number, 'solution']
         save_data(worksheet, data)
-        selected_number = new_image()
         
     if col3.button('Aggregate', key="Aggregate"):
         data.loc[len(data)] = [selected_number, 'Aggregate']
         save_data(worksheet, data)
-        selected_number = new_image()
         
     if col4.button('Gel', key="Gel"):
         data.loc[len(data)] = [selected_number, 'gel']
         save_data(worksheet, data)
-        selected_number = new_image()
         
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [selected_number, 'Skip']
         save_data(worksheet, data)
-        selected_number = new_image()
     
 
     
