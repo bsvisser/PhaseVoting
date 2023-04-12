@@ -85,7 +85,7 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         st.session_state.numbers.remove(selected_number)
-        
+        print('removed number')
         
     # Define the main Streamlit app
     
@@ -98,11 +98,13 @@ if check_password():
     def new_image():
         with st.spinner('Saving & Loading next image...'):
             selected_number = st.session_state.numbers[0]
+            print(selected_number)
             IMAGE_URL = f'{base_url}{selected_number}'
             response = requests.get(IMAGE_URL)
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
         return selected_number
+    
     selected_number = new_image()
     
     
