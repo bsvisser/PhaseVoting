@@ -102,7 +102,7 @@ if check_password():
         random_image = random.choice(image_list)
     
     # Choose a number to remove
-    with st.spinner('Saving...'):
+    with st.spinner('Saving & Loading next image...'):
         selected_number = st.session_state.numbers[0]
         IMAGE_URL = f'{base_url}{selected_number}'
         response = requests.get(IMAGE_URL)
