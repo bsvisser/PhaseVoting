@@ -84,7 +84,7 @@ if check_password():
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-        st.session_state.numbers.remove(selected_number)
+        
         
     # Define the main Streamlit app
     
@@ -110,23 +110,28 @@ if check_password():
     if col1.button('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [selected_number, 'coacervate']
         save_data(worksheet, data)
-
+        st.session_state.numbers.remove(selected_number)
+        
     if col2.button('Solution', key="Solution"):
         data.loc[len(data)] = [selected_number, 'solution']
         save_data(worksheet, data)
+        st.session_state.numbers.remove(selected_number)
         
     if col3.button('Aggregate', key="Aggregate"):
         data.loc[len(data)] = [selected_number, 'Aggregate']
         save_data(worksheet, data)
+        st.session_state.numbers.remove(selected_number)
         
     if col4.button('Gel', key="Gel"):
         data.loc[len(data)] = [selected_number, 'gel']
         save_data(worksheet, data)
+        st.session_state.numbers.remove(selected_number)
         
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [selected_number, 'Skip']
         save_data(worksheet, data)
-    
+        st.session_state.numbers.remove(selected_number)
+        
 
     
     # Show the remaining number of images
