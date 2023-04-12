@@ -63,10 +63,10 @@ if check_password():
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
         base_url = st.secrets["base_url"]
-        return image_list, base_url, selected_number
+        return image_list, base_url
     
     IMAGE_LIST_PATH = r'./file_list.csv'
-    image_list, base_url, selected_number = read_images(IMAGE_LIST_PATH)
+    image_list, base_url = read_images(IMAGE_LIST_PATH)
     
     # Initialize session state numbers
     if 'numbers' not in st.session_state:
