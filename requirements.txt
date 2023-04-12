@@ -3,4 +3,3 @@ pandas
 gspread==5.7.1
 pillow
 requests
-io
