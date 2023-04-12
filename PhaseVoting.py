@@ -119,29 +119,28 @@ if check_password():
         data.loc[len(data)] = [random_image, 'coacervate']
         save_data(worksheet, data)
         image_list.remove(random_image)
-        st.session_state.numbers.remove(selected_number)
         
 
     if col2.button('Solution', key="Solution"):
         data.loc[len(data)] = [random_image, 'solution']
         save_data(worksheet, data)
-        st.session_state.numbers.remove(selected_number)
+        image_list.remove(random_image)
+
     
     if col3.button('Aggregate', key="Aggregate"):
         data.loc[len(data)] = [random_image, 'Aggregate']
         save_data(worksheet, data)
-        st.session_state.numbers.remove(selected_number)
 
     
     if col4.button('Gel', key="Gel"):
         data.loc[len(data)] = [random_image, 'gel']
         save_data(worksheet, data)
-        st.session_state.numbers.remove(selected_number)
+        image_list.remove(random_image)
         
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [random_image, 'Skip']
         save_data(worksheet, data)
-        st.session_state.numbers.remove(selected_number)
+        image_list.remove(random_image)
 
 
     
