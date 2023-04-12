@@ -83,8 +83,7 @@ if check_password():
     
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
-        with st.spinner('Saving...'):
-            worksheet.update([df.columns.values.tolist()] + df.values.tolist())
+        worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         
     # Define the main Streamlit app
     
@@ -103,12 +102,13 @@ if check_password():
     
     
     # Choose a number to remove
-    selected_number = st.session_state.numbers[0]
-    base_url = st.secrets["base_url"]
-    IMAGE_URL = f'{base_url}{selected_number}'
-    response = requests.get(IMAGE_URL)
-    image = Image.open(BytesIO(response.content))
-    st.image(image, width = 256)
+    with st.spinner('Saving...'):
+        selected_number = st.session_state.numbers[0]
+        base_url = st.secrets["base_url"]
+        IMAGE_URL = f'{base_url}{selected_number}'
+        response = requests.get(IMAGE_URL)
+        image = Image.open(BytesIO(response.content))
+        st.image(image, width = 256)
     
     # Create two columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
