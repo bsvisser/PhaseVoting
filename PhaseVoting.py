@@ -96,7 +96,7 @@ if check_password():
     # Create 5 columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
-    
+    selected_number = st.session_state.numbers[0]
     # Show the buttons for the user to answer
     if col1.button('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [selected_number, 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
@@ -120,7 +120,6 @@ if check_password():
         
     # Choose a number to remove
     with st.spinner('Saving & Loading next image...'):
-        selected_number = st.session_state.numbers[0]
         IMAGE_URL = f'{base_url}{selected_number}'
         response = requests.get(IMAGE_URL)
         image = Image.open(BytesIO(response.content))
