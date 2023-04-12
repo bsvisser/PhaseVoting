@@ -77,13 +77,13 @@ if check_password():
     # Define the function to load the data from the CSV file
     @st.cache_resource
     def load_data():
-        st.spinner(text="In progress...")
         worksheet = gc.open_by_key(spreadsheet_key).get_worksheet(0)
         dataframe = pd.DataFrame(worksheet.get_all_records())
         return dataframe, worksheet
     
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
+        st.spinner(text="Saving...")
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         
     # Define the main Streamlit app
