@@ -94,11 +94,6 @@ if check_password():
     # Load the data from the CSV file
     data, worksheet = load_data()
     
-    def single_run():
-        selected_number = new_image()
-        return selected_number
-    selected_number = single_run()
-    
     # Choose a number to remove
     def new_image():
         with st.spinner('Saving & Loading next image...'):
@@ -108,7 +103,15 @@ if check_password():
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
         return selected_number
-    # Create two columns for the buttons
+    
+        
+    def single_run():
+        selected_number = new_image()
+        return selected_number
+    selected_number = single_run()
+    
+    
+    # Create 5 columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
     
