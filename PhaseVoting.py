@@ -85,19 +85,22 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         st.session_state.numbers.pop(0)
+        new_image()
 
-
- 
+        
     # Define the main Streamlit app
+
+     st.title('Image Classification')
+
     # Choose a number to remove
-    with st.spinner('Saving & Loading next image...'):
-        IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
-        response = requests.get(IMAGE_URL)
-        image = Image.open(BytesIO(response.content))
-        st.image(image, width = 512,caption=st.session_state.numbers[0])    
+    def new_image()
+        with st.spinner('Saving & Loading next image...'):
+            IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
+            response = requests.get(IMAGE_URL)
+            image = Image.open(BytesIO(response.content))
+            st.image(image, width = 512,caption=st.session_state.numbers[0])    
     
-    st.title('Image Classification')
-    
+    new_image()
     # Load the data from the CSV file
     data, worksheet = load_data()
   
