@@ -56,13 +56,10 @@ if check_password():
         return gc, spreadsheet_key
         
     gc, spreadsheet_key = google_connect()
-    
-    # Initialize session state
-    if 'numbers' not in st.session_state:
-         st.session_state.numbers = []
+ 
     
     @st.cache_resource 
-    def read_images(IMAGE_LIST_PATH):
+    def read_images(IMAGE_LIST_PATH): # read list of images present
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
         return image_list
@@ -70,7 +67,9 @@ if check_password():
     IMAGE_LIST_PATH = r'./file_list.csv'
     image_list = read_images(IMAGE_LIST_PATH)
     
-    # Generate random numbers if list is empty
+    # Initialize session state numbers
+    if 'numbers' not in st.session_state:
+         st.session_state.numbers = []
     if not st.session_state.numbers:
          st.session_state.numbers = image_list
          random.shuffle(st.session_state.numbers)
@@ -85,7 +84,6 @@ if check_password():
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-        st.cache_resource.clear()
         
     # Define the main Streamlit app
     
@@ -119,29 +117,29 @@ if check_password():
     if col1.button('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [random_image, 'coacervate']
         save_data(worksheet, data)
-        image_list.remove(random_image)
+        st.session_state.numbers.remove(selected_number)
         
 
     if col2.button('Solution', key="Solution"):
         data.loc[len(data)] = [random_image, 'solution']
         save_data(worksheet, data)
-        image_list.remove(random_image)
+        st.session_state.numbers.remove(selected_number)
 
     
     if col3.button('Aggregate', key="Aggregate"):
         data.loc[len(data)] = [random_image, 'Aggregate']
         save_data(worksheet, data)
-
+        st.session_state.numbers.remove(selected_number)
     
     if col4.button('Gel', key="Gel"):
         data.loc[len(data)] = [random_image, 'gel']
         save_data(worksheet, data)
-        image_list.remove(random_image)
+        st.session_state.numbers.remove(selected_number)
         
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [random_image, 'Skip']
         save_data(worksheet, data)
-        image_list.remove(random_image)
+        st.session_state.numbers.remove(selected_number)
 
 
     
