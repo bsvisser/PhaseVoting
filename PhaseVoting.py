@@ -83,8 +83,8 @@ if check_password():
     
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
-        st.spinner(text="Saving...")
-        worksheet.update([df.columns.values.tolist()] + df.values.tolist())
+        with st.spinner('Saving...'):
+            worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         
     # Define the main Streamlit app
     
