@@ -91,7 +91,7 @@ if check_password():
     st.title('Image Classification')
     
     # Load the data from the CSV file
-    data, worksheet = load_data(CSV_PATH)
+    data, worksheet = load_data()
                
     if len(image_list) == 0:
         st.write('No more images, clear cache to load all images again')
