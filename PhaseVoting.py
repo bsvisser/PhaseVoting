@@ -93,7 +93,7 @@ if check_password():
     st.title('Image Classification')
 
     # Choose a number to remove
-    def new_image()
+    def new_image():
         with st.spinner('Saving & Loading next image...'):
             IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
             response = requests.get(IMAGE_URL)
