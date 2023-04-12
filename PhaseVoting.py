@@ -63,7 +63,6 @@ if check_password():
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
         base_url = st.secrets["base_url"]
-        selected_number = new_image()
         return image_list, base_url, selected_number
     
     IMAGE_LIST_PATH = r'./file_list.csv'
@@ -94,6 +93,11 @@ if check_password():
     
     # Load the data from the CSV file
     data, worksheet = load_data()
+    
+    def single_run():
+        selected_number = new_image()
+        return selected_number
+    selected_number = single_run()
     
     # Choose a number to remove
     def new_image():
