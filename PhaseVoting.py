@@ -102,10 +102,10 @@ if check_password():
 
     # Load the data from the CSV file
     data, worksheet = load_data()
-        save_data(worksheet, data)
+        
 
     st.button("Start", key="start"):
-        
+        save_data(worksheet, data)
     # Create 5 columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
