@@ -63,10 +63,11 @@ if check_password():
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
         base_url = st.secrets["base_url"]
-        return image_list, base_url
+        selected_number = new_image()
+        return image_list, base_url, selected_number
     
     IMAGE_LIST_PATH = r'./file_list.csv'
-    image_list, base_url = read_images(IMAGE_LIST_PATH)
+    image_list, base_url, selected_number = read_images(IMAGE_LIST_PATH)
     
     # Initialize session state numbers
     if 'numbers' not in st.session_state:
@@ -103,7 +104,6 @@ if check_password():
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
         return selected_number
-    selected_number = new_image()
     # Create two columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
