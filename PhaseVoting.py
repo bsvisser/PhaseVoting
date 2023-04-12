@@ -73,6 +73,7 @@ if check_password():
     if not st.session_state.numbers:
          st.session_state.numbers = image_list
          random.shuffle(st.session_state.numbers)
+         selected_number = st.session_state.numbers[0]
        
     # Define the function to load the data from the Drive sheet
     def load_data():
