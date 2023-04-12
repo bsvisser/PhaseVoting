@@ -105,29 +105,29 @@ if check_password():
 
     if st.button("Click here to get your first image", key="start"):
         save_data(worksheet, data)
-    # Create 5 columns for the buttons
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    # Show the buttons for the user to answer
-    if col1.button('Coacervate', key="Coacervate"):
-        data.loc[len(data)] = [st.session_state.numbers[0], 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
-        save_data(worksheet, data)
-        
-    if col2.button('Solution', key="Solution"):
-        data.loc[len(data)] = [st.session_state.numbers[0], 'solution', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
-        save_data(worksheet, data)
-        
-    if col3.button('Aggregate', key="Aggregate"):
-        data.loc[len(data)] = [st.session_state.numbers[0], 'Aggregate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
-        save_data(worksheet, data)
-        
-    if col4.button('Gel', key="Gel"):
-        data.loc[len(data)] = [st.session_state.numbers[0], 'gel', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
-        save_data(worksheet, data)
-        
-    if col4.button('Skip', key="Skip"):
-        data.loc[len(data)] = [st.session_state.numbers[0], 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
-        save_data(worksheet, data)
+        # Create 5 columns for the buttons
+        col1, col2, col3, col4, col5 = st.columns(5)
+
+        # Show the buttons for the user to answer
+        if col1.button('Coacervate', key="Coacervate"):
+            data.loc[len(data)] = [st.session_state.numbers[0], 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+            save_data(worksheet, data)
+
+        if col2.button('Solution', key="Solution"):
+            data.loc[len(data)] = [st.session_state.numbers[0], 'solution', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+            save_data(worksheet, data)
+
+        if col3.button('Aggregate', key="Aggregate"):
+            data.loc[len(data)] = [st.session_state.numbers[0], 'Aggregate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+            save_data(worksheet, data)
+
+        if col4.button('Gel', key="Gel"):
+            data.loc[len(data)] = [st.session_state.numbers[0], 'gel', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+            save_data(worksheet, data)
+
+        if col4.button('Skip', key="Skip"):
+            data.loc[len(data)] = [st.session_state.numbers[0], 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+            save_data(worksheet, data)
 
     
     # Show the remaining number of images
