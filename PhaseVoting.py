@@ -77,6 +77,7 @@ if check_password():
     # Define the function to load the data from the CSV file
     @st.cache_resource
     def load_data():
+        st.spinner(text="In progress...")
         worksheet = gc.open_by_key(spreadsheet_key).get_worksheet(0)
         dataframe = pd.DataFrame(worksheet.get_all_records())
         return dataframe, worksheet
@@ -151,5 +152,5 @@ if check_password():
             st.experimental_rerun()
     else:
         random_image = random.choice(image_list)
-        st.write(f'{len(st.session_state.numbers)} images in session')
+        st.write(f'{len(st.session_state.numbers)} images in session (no, you don\'t have to answer them all :) )')
 
