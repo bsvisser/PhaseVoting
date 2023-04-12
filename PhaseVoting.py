@@ -57,13 +57,13 @@ if check_password():
         
     gc, spreadsheet_key = google_connect()
  
+    new_image()
     
     @st.cache_resource 
     def read_images(IMAGE_LIST_PATH): # read list of images present
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
         base_url = st.secrets["base_url"]
-        new_image()
         return image_list, base_url
     
     IMAGE_LIST_PATH = r'./file_list.csv'
