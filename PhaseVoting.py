@@ -57,7 +57,6 @@ if check_password():
         
     gc, spreadsheet_key = google_connect()
  
-    new_image()
     
     @st.cache_resource 
     def read_images(IMAGE_LIST_PATH): # read list of images present
@@ -102,7 +101,7 @@ if check_password():
             response = requests.get(IMAGE_URL)
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
-    
+    new_image()
     # Create two columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
