@@ -84,17 +84,17 @@ if check_password():
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-        st.session_state.numbers.remove(selected_number)
-        selected_number = st.session_state.numbers[0]
+        st.session_state.numbers.pop(0)
+
 
  
-        # Choose a number to remove
+    # Define the main Streamlit app
+    # Choose a number to remove
     with st.spinner('Saving & Loading next image...'):
-        IMAGE_URL = f'{base_url}{selected_number}'
+        IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
         response = requests.get(IMAGE_URL)
         image = Image.open(BytesIO(response.content))
-        st.image(image, width = 512,caption=selected_number)    
-    # Define the main Streamlit app
+        st.image(image, width = 512,caption=st.session_state.numbers[0])    
     
     st.title('Image Classification')
     
@@ -107,23 +107,23 @@ if check_password():
     
     # Show the buttons for the user to answer
     if col1.button('Coacervate', key="Coacervate"):
-        data.loc[len(data)] = [selected_number, 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+        data.loc[len(data)] = [st.session_state.numbers[0], 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         
     if col2.button('Solution', key="Solution"):
-        data.loc[len(data)] = [selected_number, 'solution', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+        data.loc[len(data)] = [st.session_state.numbers[0], 'solution', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         
     if col3.button('Aggregate', key="Aggregate"):
-        data.loc[len(data)] = [selected_number, 'Aggregate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+        data.loc[len(data)] = [st.session_state.numbers[0], 'Aggregate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         
     if col4.button('Gel', key="Gel"):
-        data.loc[len(data)] = [selected_number, 'gel', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+        data.loc[len(data)] = [st.session_state.numbers[0], 'gel', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         
     if col4.button('Skip', key="Skip"):
-        data.loc[len(data)] = [selected_number, 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
+        data.loc[len(data)] = [st.session_state.numbers[0], 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
 
     
