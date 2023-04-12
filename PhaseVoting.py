@@ -84,6 +84,9 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         st.session_state.numbers.remove(selected_number)
+        selected_number = st.session_state.numbers[0]
+
+ 
         
     # Define the main Streamlit app
     
@@ -96,7 +99,6 @@ if check_password():
     # Create 5 columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
-    selected_number = st.session_state.numbers[0]
     # Show the buttons for the user to answer
     if col1.button('Coacervate', key="Coacervate"):
         data.loc[len(data)] = [selected_number, 'coacervate', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
