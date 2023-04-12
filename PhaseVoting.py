@@ -90,7 +90,7 @@ if check_password():
         
     # Define the main Streamlit app
 
-     st.title('Image Classification')
+    st.title('Image Classification')
 
     # Choose a number to remove
     def new_image()
