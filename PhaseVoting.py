@@ -104,7 +104,7 @@ if check_password():
     data, worksheet = load_data()
         
 
-    st.button("Start", key="start"):
+    if st.button("Start", key="start"):
         save_data(worksheet, data)
     # Create 5 columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
