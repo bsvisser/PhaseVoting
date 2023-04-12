@@ -104,7 +104,7 @@ if check_password():
             st.image(image, width = 512,caption=selected_number)
         return selected_number
     
-        
+    @st.cache_resource     
     def single_run():
         selected_number = new_image()
         return selected_number
