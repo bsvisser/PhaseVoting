@@ -11,7 +11,6 @@ import gspread
 from PIL import Image
 import requests
 from io import BytesIO
-#import df2gspread as d2g
 
 
 def check_password():
@@ -58,8 +57,6 @@ if check_password():
         
     gc, spreadsheet_key = google_connect()
     
-
-        
     # Initialize session state
     if 'numbers' not in st.session_state:
          st.session_state.numbers = []
@@ -77,13 +74,10 @@ if check_password():
     if not st.session_state.numbers:
          st.session_state.numbers = image_list
          random.shuffle(st.session_state.numbers)
-    
-    # Define the path for the CSV file
-    CSV_PATH = 'E://data_quiz.csv'
-    
+       
     # Define the function to load the data from the CSV file
     @st.cache_resource
-    def load_data(CSV_PATH):
+    def load_data():
         worksheet = gc.open_by_key(spreadsheet_key).get_worksheet(0)
         dataframe = pd.DataFrame(worksheet.get_all_records())
         return dataframe, worksheet
@@ -92,8 +86,6 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
 
-    
-    
     # Define the main Streamlit app
     
     st.title('Image Classification')
