@@ -85,7 +85,8 @@ if check_password():
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-
+        st.cache_resource.clear()
+        
     # Define the main Streamlit app
     
     st.title('Image Classification')
