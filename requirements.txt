@@ -1,0 +1,7 @@
+streamlit
+pandas
+random
+gspread
+PIL
+requests
+io
