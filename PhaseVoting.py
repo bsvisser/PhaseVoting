@@ -85,7 +85,6 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         st.session_state.numbers.remove(selected_number)
-        st.write('removed number')
         
     # Define the main Streamlit app
     
@@ -98,15 +97,12 @@ if check_password():
     def new_image():
         with st.spinner('Saving & Loading next image...'):
             selected_number = st.session_state.numbers[0]
-            st.write(selected_number)
             IMAGE_URL = f'{base_url}{selected_number}'
             response = requests.get(IMAGE_URL)
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
         return selected_number
-    
-    selected_number = new_image()
-    
+  
     
     # Create 5 columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -133,7 +129,8 @@ if check_password():
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [selected_number, 'Skip']
         save_data(worksheet, data)
-
+        
+    selected_number = new_image()
 
     
     # Show the remaining number of images
