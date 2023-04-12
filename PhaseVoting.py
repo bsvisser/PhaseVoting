@@ -62,10 +62,11 @@ if check_password():
     def read_images(IMAGE_LIST_PATH): # read list of images present
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
-        return image_list
+        base_url = st.secrets["base_url"]
+        return image_list, base_url
     
     IMAGE_LIST_PATH = r'./file_list.csv'
-    image_list = read_images(IMAGE_LIST_PATH)
+    image_list, base_url = read_images(IMAGE_LIST_PATH)
     
     # Initialize session state numbers
     if 'numbers' not in st.session_state:
@@ -100,11 +101,9 @@ if check_password():
     else:
         random_image = random.choice(image_list)
     
-    
     # Choose a number to remove
     with st.spinner('Saving...'):
         selected_number = st.session_state.numbers[0]
-        base_url = st.secrets["base_url"]
         IMAGE_URL = f'{base_url}{selected_number}'
         response = requests.get(IMAGE_URL)
         image = Image.open(BytesIO(response.content))
