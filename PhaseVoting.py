@@ -85,7 +85,7 @@ if check_password():
     def save_data(worksheet, df):
         worksheet.update([df.columns.values.tolist()] + df.values.tolist())
         st.session_state.numbers.remove(selected_number)
-        new_image()
+        selected_number = new_image()
     # Define the main Streamlit app
     
     st.title('Image Classification')
@@ -101,7 +101,8 @@ if check_password():
             response = requests.get(IMAGE_URL)
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=selected_number)
-    new_image()
+         return selected_number
+    selected_number = new_image()
     # Create two columns for the buttons
     col1, col2, col3, col4, col5 = st.columns(5)
     
