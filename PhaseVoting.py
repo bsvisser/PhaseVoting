@@ -107,29 +107,29 @@ if check_password():
     
     # Show the buttons for the user to answer
     if col1.button('Coacervate', key="Coacervate"):
-        data.loc[len(data)] = [random_image, 'coacervate']
+        data.loc[len(data)] = [selected_number, 'coacervate']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
 
     if col2.button('Solution', key="Solution"):
-        data.loc[len(data)] = [random_image, 'solution']
+        data.loc[len(data)] = [selected_number, 'solution']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
 
     
     if col3.button('Aggregate', key="Aggregate"):
-        data.loc[len(data)] = [random_image, 'Aggregate']
+        data.loc[len(data)] = [selected_number, 'Aggregate']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
     
     if col4.button('Gel', key="Gel"):
-        data.loc[len(data)] = [random_image, 'gel']
+        data.loc[len(data)] = [selected_number, 'gel']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
         
     if col4.button('Skip', key="Skip"):
-        data.loc[len(data)] = [random_image, 'Skip']
+        data.loc[len(data)] = [selected_number, 'Skip']
         save_data(worksheet, data)
         st.session_state.numbers.remove(selected_number)
 
