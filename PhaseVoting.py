@@ -99,8 +99,8 @@ if check_password():
             response = requests.get(IMAGE_URL)
             image = Image.open(BytesIO(response.content))
             st.image(image, width = 512,caption=st.session_state.numbers[0])    
-    
-    new_image()
+    if 'new_image' not in st.session_state:
+        new_image()
     # Load the data from the CSV file
     data, worksheet = load_data()
   
