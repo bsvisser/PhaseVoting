@@ -88,7 +88,12 @@ if check_password():
         selected_number = st.session_state.numbers[0]
 
  
-        
+        # Choose a number to remove
+    with st.spinner('Saving & Loading next image...'):
+        IMAGE_URL = f'{base_url}{selected_number}'
+        response = requests.get(IMAGE_URL)
+        image = Image.open(BytesIO(response.content))
+        st.image(image, width = 512,caption=selected_number)    
     # Define the main Streamlit app
     
     st.title('Image Classification')
@@ -120,13 +125,6 @@ if check_password():
     if col4.button('Skip', key="Skip"):
         data.loc[len(data)] = [selected_number, 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
-        
-    # Choose a number to remove
-    with st.spinner('Saving & Loading next image...'):
-        IMAGE_URL = f'{base_url}{selected_number}'
-        response = requests.get(IMAGE_URL)
-        image = Image.open(BytesIO(response.content))
-        st.image(image, width = 512,caption=selected_number)
 
     
     # Show the remaining number of images
