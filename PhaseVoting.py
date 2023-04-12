@@ -91,14 +91,6 @@ if check_password():
     
     # Load the data from the CSV file
     data, worksheet = load_data()
-    
-    # Choose a number to remove
-    with st.spinner('Saving & Loading next image...'):
-        selected_number = st.session_state.numbers[0]
-        IMAGE_URL = f'{base_url}{selected_number}'
-        response = requests.get(IMAGE_URL)
-        image = Image.open(BytesIO(response.content))
-        st.image(image, width = 512,caption=selected_number)
   
     
     # Create 5 columns for the buttons
@@ -126,7 +118,13 @@ if check_password():
         data.loc[len(data)] = [selected_number, 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
         
-        
+    # Choose a number to remove
+    with st.spinner('Saving & Loading next image...'):
+        selected_number = st.session_state.numbers[0]
+        IMAGE_URL = f'{base_url}{selected_number}'
+        response = requests.get(IMAGE_URL)
+        image = Image.open(BytesIO(response.content))
+        st.image(image, width = 512,caption=selected_number)
 
     
     # Show the remaining number of images
