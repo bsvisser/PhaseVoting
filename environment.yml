@@ -1,9 +1,0 @@
-name: env
-dependencies:
-  - streamlit
-  - pandas
-  - random
-  - gspread
-  - PIL
-  - requests
-  - io
