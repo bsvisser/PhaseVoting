@@ -63,6 +63,7 @@ if check_password():
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().strip().split(",")
         base_url = st.secrets["base_url"]
+        new_image()
         return image_list, base_url
     
     IMAGE_LIST_PATH = r'./file_list.csv'
