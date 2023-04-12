@@ -151,5 +151,5 @@ if check_password():
             st.experimental_rerun()
     else:
         random_image = random.choice(image_list)
-    st.write(f'{len(image_list)} images in session')
+        st.write(f'{len(image_list)} images in session')
 
