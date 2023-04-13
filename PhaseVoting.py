@@ -63,7 +63,7 @@ if check_password():
         base_url = st.secrets["base_url"]
         return image_list, base_url
     
-    IMAGE_LIST_PATH = r'./file_list.csv'
+    IMAGE_LIST_PATH = r'./file_list.txt'
     image_list, base_url = read_images(IMAGE_LIST_PATH)
     
     # Initialize session state numbers
