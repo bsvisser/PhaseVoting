@@ -61,8 +61,6 @@ if check_password():
         with open(IMAGE_LIST_PATH, 'r') as f:
             image_list = f.read().split("\n")
         base_url = st.secrets["base_url"]
-        print(image_list)
-        st.write(image_list)
         return image_list, base_url
     
     IMAGE_LIST_PATH = r'./file_list.txt'
