@@ -75,7 +75,7 @@ if check_password():
          selected_number = st.session_state.numbers[0]
        
     # Define the function to load the data from the Drive sheet
-    @st.cache_resource
+    @st.cache
     def load_data():
         worksheet = gc.open_by_key(spreadsheet_key).get_worksheet(0)
         dataframe = pd.DataFrame(worksheet.get_all_records())
