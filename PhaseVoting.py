@@ -83,10 +83,19 @@ if check_password():
     
     # Define the function to save the data to the CSV file
     def save_data(worksheet, df):
-        worksheet.update([df.columns.values.tolist()] + df.values.tolist())
-        st.session_state.numbers.pop(0)
-        new_image()
-        st.cache_resource.clear()
+        counted = 0
+        done = False
+        while done == False and counted < 10:
+            try:
+                worksheet.update([df.columns.values.tolist()] + df.values.tolist())
+                st.session_state.numbers.pop(0)
+                new_image()
+                st.cache_resource.clear()
+                
+            except:
+                time.sleep(0.5)
+                counted+=1
+         
 
     # Define the main Streamlit app
 
