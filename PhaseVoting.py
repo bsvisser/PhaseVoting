@@ -91,7 +91,7 @@ if check_password():
                 st.session_state.numbers.pop(0)
                 new_image()
                 st.cache_resource.clear()
-                
+                done = True
             except:
                 time.sleep(0.5)
                 counted+=1
