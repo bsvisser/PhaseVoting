@@ -96,9 +96,7 @@ if check_password():
     def new_image():
         with st.spinner('Saving & Loading next image...'):
             IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
-            response = requests.get(IMAGE_URL)
-            image = Image.open(BytesIO(response.content))
-            st.image(image, width = 512,caption=st.session_state.numbers[0])    
+            st.image(IMAGE_URL, width = 512,caption=st.session_state.numbers[0])    
 
             # Load the data from the CSV file
     data, worksheet = load_data()
