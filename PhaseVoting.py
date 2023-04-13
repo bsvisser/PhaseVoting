@@ -50,7 +50,6 @@ if check_password():
         ]
         
         gc = gspread.service_account_from_dict(credentials)
-        print(st.secrets)
         spreadsheet_key = st.secrets["urlkey"]
         return gc, spreadsheet_key
         
@@ -106,6 +105,7 @@ if check_password():
         with st.spinner('Saving & Loading next image...'):
             IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
             st.image(IMAGE_URL, width = 512)    
+            print(IMAGE_URL)
 
             # Load the data from the CSV file
     data, worksheet = load_data()
