@@ -1,6 +1,7 @@
 resized_C3_10x.png
 resized_D1_10x.png
 resized_2mgml40X.bmp.png
+resized_22-11-afteradditionofNaClt0.tif.png
 resized_C440Xsolution.png
 resized_40x20%.bmp.png
 resized_RP_aSyn_3-TM.tif.png
@@ -55,7 +56,6 @@ resized_1_33h.tif.png
 resized_1_plys_atp_t3.tif.png
 resized_22_435h.tif.png
 resized_21-12-13150um-200mm_after_mechanical_2.tif.png
-resized_22-11-afteradditionofNaClt=0.tif.png
 resized_22-11-Coacervatesnr112.tif.png
 resized_s3_0.4-t.tif.png
 resized_21_43h.tif.png
@@ -340,12 +340,11 @@ resized_R100-D10-0100.tif.png
 resized_RNARP3_pap_8-transmission.tif.png
 resized_RP3_polyU_t1.tif.png
 resized_rp3_rna_mpeg_6t.tif.png
-resized_tdp-43_circularity.lif-plys_atp_after_tev_series1-C=1.tif.png
+resized_tdp-43_circularity.lif-plys_atp_after_tev_series2-C1.tif.png
 resized_s1_0.3-2.tif.png
 resized_s2_0.3-3.tif.png
 resized_s3_0.4-1.tif.png
-resized_tdp-43_circularity.lif-plys_atp_after_tev_series2-C=1.tif.png
-resized_tdp-43_circularity.lif-plys_pglu_after_Tev_series1-C=1.tif.png
+resized_tdp-43_circularity.lif-plys_pglu_after_Tev_series1-C1.tif.png
 resized_64x4ulfrfruler.bmp.png
 resized_just_buffer_after_incubation.tif.png
 resized_just_buffer_after_incubation_2.tif.png
@@ -359,3 +358,4 @@ resized_100_825h.tif.png
 resized_LLssLL100mmBuffer10X.bmp.png
 resized_21-12-13150um-200mm_after_lunch_and_streak.tif.png
 resized_21-12-13150um-200mm_after_lunch_and_streak_10min.tif.png
+resized_tdp-43_circularity.lif-plys_atp_after_tev_series1-C1.tif.png
