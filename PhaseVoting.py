@@ -59,7 +59,7 @@ if check_password():
     @st.cache_resource 
     def read_images(IMAGE_LIST_PATH): # read list of images present
         with open(IMAGE_LIST_PATH, 'r') as f:
-            image_list = f.read().strip().split("\t")
+            image_list = f.read().split("\n")
         base_url = st.secrets["base_url"]
         print(image_list)
         st.write(image_list)
