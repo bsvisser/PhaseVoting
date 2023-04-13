@@ -1,11 +1,16 @@
 resized_C3_10x.png
 resized_D1_10x.png
+resized_2mgml40X.bmp.png
+resized_C440Xsolution.png
+resized_40x20%.bmp.png
+resized_RP_aSyn_3-TM.tif.png
+resized_RS_aSyn_4-TM.tif.png
 resized_E2_10x.png
-resized_C4 40X solution.png
+resized_RY_aSyn_3-TM.tif.png
 resized_s3_6t.tif.png
-resized_LLssLL 100mm Buffer 10X.bmp.png
+resized_FFssFFsalt40X.bmp.png
 resized_Image_2632.tif.png
-resized_FFssFF salt 40X.bmp.png
+resized_C540Xsolution.bmp.png
 resized_102_835h.tif.png
 resized_101_83h.tif.png
 resized_104_845h.tif.png
@@ -49,37 +54,35 @@ resized_19_42h.tif.png
 resized_1_33h.tif.png
 resized_1_plys_atp_t3.tif.png
 resized_22_435h.tif.png
-resized_21-12-13 150um-200mm _after_lunch_and_streak.tif.png
-resized_21-12-13 150um-200mm _after_lunch_and_streak_10min.tif.png
-resized_21-12-13 150um-200mm _after_mechanical_2.tif.png
+resized_21-12-13150um-200mm_after_mechanical_2.tif.png
+resized_22-11-afteradditionofNaClt=0.tif.png
+resized_22-11-Coacervatesnr112.tif.png
+resized_s3_0.4-t.tif.png
 resized_21_43h.tif.png
-resized_22-11 - after addition of NaCl t=0.tif.png
-resized_22-11 - Coacervates nr 112.tif.png
+resized_40x22%WWssWW-2.bmp.png
+resized_64x4d1.bmp.png
 resized_24_445h.tif.png
 resized_23_44h.tif.png
 resized_26_455h.tif.png
 resized_25_45h.tif.png
 resized_2_335h.tif.png
 resized_27_46h.tif.png
-resized_2mgml 40X.bmp.png
 resized_76_705h.tif.png
 resized_2_pLysATP_old_t1.tif.png
 resized_2_pLyspGlu_0.7_0.3_t4.tif.png
 resized_2_plys_atp_t2.tif.png
 resized_3_34h.tif.png
-resized_40x 20%.bmp.png
-resized_40x 22% WWssWW-2.bmp.png
-resized_40x 33% WWssWW.bmp.png
-resized_40x 40%.bmp.png
-resized_40x 44% WWssWW.bmp.png
-resized_40X 60%.bmp.png
-resized_40X 80%.bmp.png
-resized_4mg 40X.bmp.png
+resized_40x33%WWssWW.bmp.png
+resized_40x40%.bmp.png
+resized_40x44%WWssWW.bmp.png
+resized_40X60%.bmp.png
+resized_40X80%.bmp.png
+resized_4mg40X.bmp.png
+resized_64x4ulfrf.bmp.png
+resized_C540Xglass.bmp.png
 resized_4_34.5h.tif.png
 resized_5_35h.tif.png
-resized_64x 4ul fr f.bmp.png
 resized_74_695h.tif.png
-resized_64x 4d 1.bmp.png
 resized_6_35.5h.tif.png
 resized_6_pLyspGlu_0.3_0.7_coac_first-t1.tif.png
 resized_6_pLyspGlu_0.3_0.7_coac_first-t2.tif.png
@@ -113,12 +116,11 @@ resized_99_82h.tif.png
 resized_9_37h.tif.png
 resized_C13_bf_1.tif.png
 resized_C21_bf_3.tif.png
-resized_C5 40X glass.bmp.png
-resized_C5 40X solution.bmp.png
+resized_condition1_BF_1.tif.png
 resized_C6_bf_3.tif.png
 resized_C7_bf_1.tif.png
-resized_condition 1_BF_1.tif.png
-resized_LLssLL 100mm NaCO3 10X.bmp.png
+resized_LLssLL100mmNaCO310X.bmp.png
+resized_LLssLL100mmNET40X.bmp.png
 resized_Image_2639.tif.png
 resized_Image_2640.tif.png
 resized_K30-D30-0001.tif.png
@@ -233,7 +235,7 @@ resized_R10_transacontate_5mM.tif.png
 resized_R10_tricarbyllylate_5mM.tif.png
 resized_R10_tricarbyllylate_5mM_edge.tif.png
 resized_R10_trimesate_5mM.tif.png
-resized_LLssLL 100mm NET 40X.bmp.png
+resized_condition8_BF_1.jpg.png
 resized_R10_trimesate_5mM_edge.tif.png
 resized_R100-D10-0001.tif.png
 resized_R100-D10-0002.tif.png
@@ -336,19 +338,15 @@ resized_R100-D10-0098.tif.png
 resized_R100-D10-0099.tif.png
 resized_R100-D10-0100.tif.png
 resized_RNARP3_pap_8-transmission.tif.png
-resized_RP_aSyn_3 - TM.tif.png
 resized_RP3_polyU_t1.tif.png
 resized_rp3_rna_mpeg_6t.tif.png
-resized_RS_aSyn_4 - TM.tif.png
-resized_RY_aSyn_3 - TM.tif.png
+resized_tdp-43_circularity.lif-plys_atp_after_tev_series1-C=1.tif.png
 resized_s1_0.3-2.tif.png
 resized_s2_0.3-3.tif.png
-resized_s3_0.4 -t.tif.png
 resized_s3_0.4-1.tif.png
-resized_tdp-43_circularity.lif - plys_atp_after_tev_series1 - C=1.tif.png
-resized_tdp-43_circularity.lif - plys_atp_after_tev_series2 - C=1.tif.png
-resized_tdp-43_circularity.lif - plys_pglu_after_Tev_series1 - C=1.tif.png
-resized_condition 8_BF_1.jpg.png
+resized_tdp-43_circularity.lif-plys_atp_after_tev_series2-C=1.tif.png
+resized_tdp-43_circularity.lif-plys_pglu_after_Tev_series1-C=1.tif.png
+resized_64x4ulfrfruler.bmp.png
 resized_just_buffer_after_incubation.tif.png
 resized_just_buffer_after_incubation_2.tif.png
 resized_R10_fumarate.tif.png
@@ -358,4 +356,6 @@ resized_R10_malonate.tif.png
 resized_R10_oxalate.tif.png
 resized_R10_Pi.tif.png
 resized_100_825h.tif.png
-resized_64x 4ul fr f ruler.bmp.png
+resized_LLssLL100mmBuffer10X.bmp.png
+resized_21-12-13150um-200mm_after_lunch_and_streak.tif.png
+resized_21-12-13150um-200mm_after_lunch_and_streak_10min.tif.png
