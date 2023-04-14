@@ -42,6 +42,12 @@ def check_password():
         return True
 
 if check_password():
+    if len(st.session_state.numbers) == 0:
+        st.write('No more images, clear cache to load all images again')
+        if st.button("Clear cache", key = "Cache"):
+            st.cache_resource.clear()
+            st.experimental_rerun()
+            
     @st.cache_resource
     def google_connect():
         credentials = st.secrets["credentials"]
@@ -138,11 +144,5 @@ if check_password():
         data.loc[len(data)] = [st.session_state.numbers[0], 'Skip', datetime.now().strftime('%Y-%m-%d %H:%M:%S')]
         save_data(worksheet, data)
 
-    
-    # Show the remaining number of images
-    if len(st.session_state.numbers) == 0:
-        st.write('No more images, clear cache to load all images again')
-        if st.button("Clear cache", key = "Cache"):
-            st.cache_resource.clear()
-            st.experimental_rerun()
+ 
     st.write(f'{len(st.session_state.numbers)} images in session (no, you don\'t have to answer them all :) )')
