@@ -91,7 +91,6 @@ if check_password():
                 worksheet.update([df.columns.values.tolist()] + df.values.tolist())
                 st.session_state.numbers.pop(0)
                 new_image()
-                st.cache_resource.clear()
                 done = True
             except Exception as e:
                 time.sleep(0.5)
