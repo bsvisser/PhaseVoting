@@ -73,13 +73,13 @@ if check_password():
     if not st.session_state.numbers:
          st.session_state.numbers = image_list
          random.shuffle(st.session_state.numbers)
-         selected_number = st.session_state.numbers[0]
-       
-    if len(st.session_state.numbers) == 0:
-        st.write('No more images, clear cache to load all images again')
-        if st.button("Clear cache", key = "Cache"):
-            st.cache_resource.clear()
-            st.experimental_rerun()
+         if len(st.session_state.numbers) == 0:
+            st.write('No more images, clear cache to load all images again')
+            if st.button("Clear cache", key = "Cache"):
+                st.cache_resource.clear()
+                st.experimental_rerun()
+         else:
+            selected_number = st.session_state.numbers[0]
             
     # Define the function to load the data from the Drive sheet
     @st.cache_resource
