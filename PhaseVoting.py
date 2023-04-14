@@ -93,8 +93,9 @@ if check_password():
                 new_image()
                 st.cache_resource.clear()
                 done = True
-            except:
+            except Exception as e:
                 time.sleep(0.5)
+                print(e)
                 counted+=1
          
 
