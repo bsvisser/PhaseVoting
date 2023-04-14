@@ -11,6 +11,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 from datetime import datetime
+import time
 
 def check_password():
     """Returns `True` if the user had the correct password."""
