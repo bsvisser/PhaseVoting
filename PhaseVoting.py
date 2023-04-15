@@ -112,6 +112,7 @@ if check_password():
     def new_image():
         with st.spinner('Saving & Loading next image...'):
             IMAGE_URL = f'{base_url}{st.session_state.numbers[0]}'
+            IMAGE_URL = IMAGE_URL.replace('%', '').replace('(', '').replace(')', '')
             st.image(IMAGE_URL, width = 512)    
 
             # Load the data from the CSV file
